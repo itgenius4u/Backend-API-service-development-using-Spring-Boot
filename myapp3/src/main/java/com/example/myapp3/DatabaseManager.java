@@ -1,6 +1,7 @@
 package com.example.myapp3;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +12,11 @@ public class DatabaseManager {
         return database;
     }
     @Autowired
-    public void setDatabase(Database database) {
+    public void setDatabase(@Qualifier("mySql") Database database) {
         this.database = database;
+    }
+
+    public String getDatabaseOpen() {
+        return this.database.open();
     }
 }
