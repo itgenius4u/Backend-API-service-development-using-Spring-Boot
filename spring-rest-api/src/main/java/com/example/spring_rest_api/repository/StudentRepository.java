@@ -8,5 +8,4 @@ import com.example.spring_rest_api.entity.Student;
 @Repository
 public interface StudentRepository 
     extends JpaRepository<Student, Integer> {
-
 }
