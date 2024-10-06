@@ -34,9 +34,23 @@ public class StudentController {
     }
 
     // POST /api/v1/students
-    public ResponseEntity<Student> createStudent(@RequestBody Student student){
+    public ResponseEntity<Student> createStudent(
+        @RequestBody Student student){
         Student savedStudent = studentService.addStudent(student);
         return new ResponseEntity<>(savedStudent, HttpStatus.CREATED);
     }
- 
+    // DELETE /api/v1/students/{id}
+    public ResponseEntity<String> deleteStudent(
+        @PathVariable Integer id) {
+            studentService.deleteStudent(id);
+            return new ResponseEntity<>("ok", HttpStatus.NO_CONTENT);
+        }
+    // PUT /api/v1/students/{id}
+    public ResponseEntity<Student> updateStudent(
+        @PathVariable Integer id, @RequestBody Student student) {
+           student.setStudentId(id);
+           Student updatedStudent = studentService.updateStudent(student);
+           return new ResponseEntity<>(updatedStudent, HttpStatus.NO_CONTENT);
+    
+    }
 }
