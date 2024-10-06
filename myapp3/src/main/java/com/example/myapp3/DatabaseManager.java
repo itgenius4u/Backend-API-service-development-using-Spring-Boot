@@ -12,7 +12,7 @@ public class DatabaseManager {
         return database;
     }
     @Autowired
-    public void setDatabase(@Qualifier("mySql") Database database) {
+    public void setDatabase(Database database) {
         this.database = database;
     }
 
