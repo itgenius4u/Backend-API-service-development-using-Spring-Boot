@@ -1,0 +1,98 @@
+Employee Managment System
+
+Employee
+Department
+Projects
+Task
+Address
+
+GET /employees
+GET /employees/1
+POST /employees
+PUT /employees/2
+DELETE /employees/3
+
+Content-Type: application/json
+Accept: application/json
+
+GET /departments/1/activate
+
+GET /{resource}/{resource-id}/{sub-resource}
+GET /posts/1/comments
+GET /posts/1/comments/2
+GET /cars/100/drivers
+GET /cars/101/drivers/4
+
+GET /posts/comments/1/2(x)
+GET /api/v1/cars/102/drivers/10
+
+# Sort, filter, search_key, page
+GET /companies?sort=rank_asc
+GET /companies?category=banking&location=korea
+GET /companies?page=10
+
+GET /api/v1/cars/102/drivers/10
+GET /api/v2/cars/102/drivers/10
+
+product
+category
+order
+
+GET /api/categories/{id}/products
+GET /api/categories/{id}/products/{id}
+
+POST /api/categories/{id}/products
+
+PUT /api/categories/{id}/products/{id}
+
+DELETE /api/categories/{id}/products
+DELETE /api/categories/{id}/products/{id}
+
+
+
+GET /api/products
+GET /api/products/{id}
+POST /api/products
+PUT /api/products/{id}
+DELETE /api/products/{id}
+
+GET /api/products?search_key=10
+
+GET /api/categories
+GET /api/categories/{id}
+POST /api/categories
+PUT /api/categories/{id}
+DELETE /api/categories/{id}
+
+GET /api/orders
+GET /api/orders/{id}
+POST /api/orders
+PUT /api/orders/{id}
+DELETE /api/orders/{id}
+
+GET /api/v1/employees/100
+return : 200 OK
+GET /api/v1/employees
+return : 200 OK
+POST /api/v1/employees
+return : 201 CREATED
+PUT /api/v1/employees/100
+return : 204 No Content
+DELETE /api/v1/employees/100
+return : 204 No Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
