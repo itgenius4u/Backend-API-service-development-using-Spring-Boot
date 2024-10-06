@@ -16,4 +16,23 @@ public class StudentServiceImpl
     public List<Student> getStudentAll() {
         return studentRepository.findAll();
     }
+    @Override
+    public Student getStudentById(int id) {
+        return studentRepository.findById(id).get();
+    }
+    @Override
+    public Student addStudent(Student student) {
+       return studentRepository.save(student);
+    }
+    @Override
+    public Student updateStudent(Student student) {
+        Student existedStudent 
+            = studentRepository.findById(student.getStudentId()).get();
+        existedStudent.setStudentName(student.getStudentName()); 
+        return existedStudent; 
+    }
+    @Override
+    public void deleteStudent(int id) {
+        studentRepository.deleteById(id);
+    }
 }
