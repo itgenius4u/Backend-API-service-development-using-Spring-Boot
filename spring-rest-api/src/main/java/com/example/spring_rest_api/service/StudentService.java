@@ -9,6 +9,5 @@ public interface StudentService {
     Student getStudentById(int id); // GET
     Student addStudent(Student student); // POST
     Student updateStudent(Student student); // PUT
-    void deleteStudent(int id);
-
+    void deleteStudent(int id); // DELETE
 }

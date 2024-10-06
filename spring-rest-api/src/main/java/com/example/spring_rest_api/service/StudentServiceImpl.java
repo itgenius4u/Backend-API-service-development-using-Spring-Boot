@@ -29,6 +29,7 @@ public class StudentServiceImpl
         Student existedStudent 
             = studentRepository.findById(student.getStudentId()).get();
         existedStudent.setStudentName(student.getStudentName()); 
+        studentRepository.save(existedStudent);
         return existedStudent; 
     }
     @Override
